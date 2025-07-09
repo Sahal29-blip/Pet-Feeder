@@ -35,7 +35,7 @@ const float minFoodLevel = 5.0;
 int feedingTimes[3][3] = {  // {jam, menit, durasi_detik}
   {8, 0, 3},   // Pagi
   {12, 0, 3},  // Siang
-  {19, 30, 3}   // Sore
+  {16, 0, 3}   // Sore
 };
 
 // Variabel untuk mencegah trigger berulang
