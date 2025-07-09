@@ -1,48 +1,55 @@
 # Pet-Feeder 🐾
 
-Pet-Feeder adalah sebuah proyek IoT berbasis ESP32 yang dirancang untuk memberi makan hewan peliharaan secara otomatis dan cerdas. Proyek ini memanfaatkan servo motor untuk membuka tutup tempat makanan, serta sensor ultrasonik untuk mendeteksi ketinggian atau keberadaan makanan di wadah. Selain itu, pengguna juga dapat mengontrol dan memantau perangkat ini dari jarak jauh melalui aplikasi Blynk.
+Pet-Feeder adalah sistem pemberi makan otomatis berbasis ESP32 yang dirancang untuk membantu pemilik hewan peliharaan memberi makan secara terjadwal dan dapat dipantau dari jarak jauh. Sistem ini menggabungkan penggunaan sensor ultrasonik, motor servo, dan koneksi internet untuk pemantauan serta pengendalian melalui aplikasi **Blynk** dan notifikasi real-time via **Telegram**.
 
-## 🎯 Tujuan Proyek
+## 🔧 Fitur Utama
 
-Membantu pemilik hewan peliharaan dalam memberikan makanan secara terjadwal atau manual tanpa harus selalu berada di rumah, sekaligus memonitor status tempat makanan secara real-time melalui smartphone.
+- 🎛 **Jadwal makan otomatis** (pagi, siang, sore)
+- 📏 **Sensor ultrasonik** untuk mengukur level makanan
+- 📲 **Kontrol manual dan pemantauan jarak jauh** melalui aplikasi Blynk
+- 🤖 **Servo motor** untuk membuka penutup makanan secara otomatis
+- 📡 **Notifikasi Telegram** saat makanan habis, hampir habis, atau saat feeding dilakukan
+- 🌐 **Sinkronisasi waktu** menggunakan NTP (Network Time Protocol)
 
-## 🛠 Komponen yang Digunakan
+## ⚙️ Komponen yang Digunakan
 
 - ESP32 DevKit V1
-- Servo Motor (untuk membuka penutup makanan)
-- Sensor Ultrasonik HC-SR04 (untuk deteksi ketinggian makanan)
-- Modul Wi-Fi (bawaan ESP32)
-- Aplikasi Blynk (Android/iOS)
-- Power supply dan kabel jumper
+- Servo motor SG90
+- Sensor Ultrasonik HC-SR04
+- LED sebagai indikator WiFi
+- Aplikasi Blynk (token & virtual pin terhubung)
+- Bot Telegram (menggunakan token bot dan chat ID)
 
-## ⚙️ Cara Kerja
+## 🧠 Cara Kerja Sistem
 
-1. Saat tombol pada aplikasi Blynk ditekan, ESP32 akan mengaktifkan servo untuk membuka penutup makanan.
-2. Sensor ultrasonik membaca apakah makanan sudah habis atau masih tersedia.
-3. Status makanan akan dikirim ke aplikasi Blynk dalam bentuk notifikasi atau indikator.
-4. Sistem juga dapat dikembangkan untuk memberi makan otomatis berdasarkan waktu tertentu.
+1. Saat sistem menyala, ia akan menyambung ke WiFi dan menampilkan status melalui Telegram, termasuk waktu dan level makanan.
+2. Setiap beberapa detik, sistem mengukur level makanan dengan sensor ultrasonik dan mengirimkannya ke Blynk (V0 & V1).
+3. Jika level makanan kurang dari batas minimum (5 cm), sistem akan mengirim notifikasi ke Telegram.
+4. Pada jam-jam tertentu yang sudah ditentukan, sistem akan secara otomatis memberi makan selama durasi yang ditentukan.
+5. Pengguna juga dapat mengatur jadwal dan durasi makan melalui Blynk (V10–V31) atau melakukan feeding manual (V40).
+6. Bot Telegram juga mendukung perintah seperti `/status`, `/feed`, `/time`, dan `/schedule`.
 
 ## 📱 Tampilan Aplikasi Blynk
 
 ![Tampilan Blynk](https://github.com/Sahal29-blip/Pet-Feeder/raw/main/Tampilan%20Aplikasi%20Blynk.jpeg)
 
-## 🔧 Instalasi dan Upload Kode
+## 🧪 Contoh Perintah Telegram
 
-1. Buka file `.ino` menggunakan Arduino IDE.
-2. Pilih board **ESP32 Dev Module**.
-3. Install library yang dibutuhkan (contoh: `Blynk`, `Servo`, dll).
-4. Upload kode ke ESP32 menggunakan kabel USB.
-5. Sesuaikan token Blynk, Wi-Fi SSID, dan password di dalam kode.
+- `/status` → Menampilkan status makanan dan waktu sistem
+- `/feed` → Memberi makan manual selama 3 detik
+- `/time` → Menampilkan waktu sistem
+- `/schedule` → Menampilkan jadwal makan saat ini
 
+## 📝 Konfigurasi Jadwal (Default)
 
-## 🚀 Pengembangan Lanjutan
+| Waktu     | Jam  | Menit | Durasi |
+|-----------|------|-------|--------|
+| Pagi      | 08   | 00    | 3 detik |
+| Siang     | 12   | 00    | 3 detik |
+| Sore      | 19   | 30    | 3 detik |
 
-Beberapa ide fitur tambahan yang bisa dikembangkan:
-- Jadwal makan otomatis menggunakan RTC atau waktu dari server
-- Load cell untuk mendeteksi berat makanan
-- Kamera untuk memantau hewan secara live
-- Notifikasi Telegram jika makanan habis
+Jadwal ini dapat diubah langsung melalui aplikasi Blynk.
 
-## 📄 Lisensi
+## 📜 Lisensi
 
-Proyek ini dibuat untuk tujuan melengkapi UAS Mata Kulia Sistem Tertanam Cerdas
+Proyek ini dikembangkan untuk keperluan edukasi dan tugas akhir pada mata kuliah Sistem Tertanam Cerdas, Universitas Muhammadiyah Malang. Dapat dimodifikasi dan dikembangkan lebih lanjut untuk kebutuhan pribadi.
