@@ -34,5 +34,15 @@ Membantu pemilik hewan peliharaan dalam memberikan makanan secara terjadwal atau
 4. Upload kode ke ESP32 menggunakan kabel USB.
 5. Sesuaikan token Blynk, Wi-Fi SSID, dan password di dalam kode.
 
-## 📂 Struktur Folder
 
+## 🚀 Pengembangan Lanjutan
+
+Beberapa ide fitur tambahan yang bisa dikembangkan:
+- Jadwal makan otomatis menggunakan RTC atau waktu dari server
+- Load cell untuk mendeteksi berat makanan
+- Kamera untuk memantau hewan secara live
+- Notifikasi Telegram jika makanan habis
+
+## 📄 Lisensi
+
+Proyek ini dibuat untuk tujuan melengkapi UAS Mata Kulia Sistem Tertanam Cerdas
