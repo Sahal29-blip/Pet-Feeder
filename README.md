@@ -31,7 +31,7 @@ Pet-Feeder adalah sistem pemberi makan otomatis berbasis ESP32 yang dirancang un
 
 ## 📱 Tampilan Aplikasi Blynk
 
-![Tampilan Blynk](https://github.com/Sahal29-blip/Pet-Feeder/raw/main/Tampilan%20Aplikasi%20Bylnk.jpeg)
+![Tampilan Blynk](https://github.com/Sahal29-blip/Pet-Feeder/raw/main/Tampilan%20Aplikasi%20Blynk.jpeg)
 
 ## 🧪 Contoh Perintah Telegram
 
