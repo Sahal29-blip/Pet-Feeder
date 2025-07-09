@@ -46,7 +46,7 @@ Pet-Feeder adalah sistem pemberi makan otomatis berbasis ESP32 yang dirancang un
 |-----------|------|-------|--------|
 | Pagi      | 08   | 00    | 3 detik |
 | Siang     | 12   | 00    | 3 detik |
-| Sore      | 19   | 30    | 3 detik |
+| Sore      | 16   | 00    | 3 detik |
 
 Jadwal ini dapat diubah langsung melalui aplikasi Blynk.
 
