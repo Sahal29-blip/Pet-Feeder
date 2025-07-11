@@ -50,6 +50,10 @@ Pet-Feeder adalah sistem pemberi makan otomatis berbasis ESP32 yang dirancang un
 
 Jadwal ini dapat diubah langsung melalui aplikasi Blynk.
 
+## Link Tiktok
+
+
+
 ## 📜 Lisensi
 
 Proyek ini dikembangkan untuk keperluan edukasi dan tugas akhir pada mata kuliah Sistem Tertanam Cerdas, Universitas Muhammadiyah Malang. Dapat dimodifikasi dan dikembangkan lebih lanjut untuk kebutuhan pribadi.
